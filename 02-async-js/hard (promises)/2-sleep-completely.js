@@ -3,6 +3,15 @@
  * During this time the thread should not be able to do anything else.
  */
 
-function sleep (seconds) {
+function sleep(seconds) {
+  const start = new Date();
 
+  while (true) {
+    if (new Date().getTime() - start >= seconds * 1000) {
+      break;
+    }
+  }
 }
+
+sleep(5);
+console.log("Test log");
